@@ -6,8 +6,7 @@ Encoding Logic:
 
 Follow the color coding of the bits in the image to understand the encoding logic.
 
-![logic.JPG](logic.jpg)
-
+![logic.jpg](logic.jpg)
 
 ## Installation Steps:
 
