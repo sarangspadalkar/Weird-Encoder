@@ -1,0 +1,107 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Encoder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+
+    <header class="jumbotron">
+        <div class="container">
+            <div class="row row-header justify-content-center">
+                <h2> Weird Text Encoder </h2>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container ">
+        <div class="row">
+            <div class="card col-sm-4">
+                <div class="card-body">
+                    <h3 class="card-title">Encoder </h3>
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="input_encode">Input String</label>
+                            <input type="text" class="form-control" id="input_encode" name="input_encode"
+                                aria-describedby="text" placeholder="Enter the input string" required>
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">
+                            Submit
+                        </button>
+
+                        {% if encodeInputString %}
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Encoded Output</h4>
+                                <p class="card-text">
+                                    <strong>Input String:</strong>
+                                    <div class="text-wrap" style="width: 46rem;">{{encodeInputString}}</div>
+                                </p>
+                                <p class="card-text">
+                                    <strong>Encoded Values:</strong>
+                                    <div class="text-wrap" style="width: 46rem;">{{result}}</div>
+                                </p>
+
+                            </div>
+                        </div>
+                        {% endif %}
+
+                    </form>
+                </div>
+            </div>
+            <div class="card col-sm-4">
+                <div class="card-body">
+                    <h3 class="card-title">Decoder </h3>
+                    <form method="POST">
+                        <div class="form-group">
+
+                            <label for="input_decode">Input Values</label>
+                            <input type="text" class="form-control" id="input_decode" aria-describedby="emailHelp"
+                                placeholder="Enter the comma separated integer values" name="input_decode" required>
+                            {% if d_message %}
+                            <small class="form-text text-muted" style="color: red;">{{ d_message }}</small>
+                            {% endif %}
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">
+                            Submit
+                        </button>
+
+                        {% if decodeInputValues %}
+                        <div class="card">
+                            <div class="card-body ">
+                                <h4 class="card-title">Decoded Output</h4>
+                                <p class="card-text ">
+                                    <strong>Input Values:</strong>
+                                    <div class="text-wrap" style="width: 46rem;"> {{decodeInputValues}}</div>
+                                </p>
+                                <p class="card-text">
+                                    <strong>Decoded String:</strong>
+                                    <div class="text-wrap" style="width: 46rem;">{{original_string}}</div>
+                                </p>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
